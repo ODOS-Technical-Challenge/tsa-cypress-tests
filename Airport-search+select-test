@@ -36,6 +36,10 @@ describe('Empty TestSearch Test', () => {
 
         cy.get('[class=usa-button]').click()
 
+        cy.get(':nth-child(1) > .usa-card__container > [data-testid="CardHeader"] > .usa-card__heading').click()
+
+        //cy.contains('O').click()
+
         //cy.url().then((value) => {
             //cy.log('The current real URL is: ', value)
         })
