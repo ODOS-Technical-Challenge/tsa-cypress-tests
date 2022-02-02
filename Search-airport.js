@@ -16,17 +16,17 @@ describe('Empty TestSearch Test', () => {
          return false})
         
         
-        cy.visit('http://react-tsa-microservice.dev.odos-tc.demoriva.com/login')
+        cy.visit('http://react-tsa-microservice.dev.odos-tc.demoriva.com/home?search=')
         
 
         //cy.contains('login').should('exist')
         
-        cy.get('[data-testid=textInput]').should('exist')
+        //cy.get('[data-testid=textInput]').should('exist')
         //cy.contains('developers and QA engineers').click()
 
-        cy.get('[data-testid=textInput]').type('Nick')
+        //cy.get('[data-testid=textInput]').type('Nick')
 
-        cy.get('[type="submit"]').click()
+        //cy.get('[type="submit"]').click()
 
         //cy.pause
 
