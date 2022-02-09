@@ -11,32 +11,40 @@ describe('Empty TestSearch Test', () => {
 
     it('test one',   () => {  
         cy.on('uncaught exception', (err, runnable) => { 
-         expect(err.message).to.iclude('Unexpected token <')   
+         expect(err.message).to.include('Unexpected token <')   
          done()
-         return false
-        })
+         return false})
         
-        cy.visit('http://react-tsa-microservice.dev.odos-tc.demoriva.com/login')
+        
+        cy.visit('http://react-tsa-microservice.dev.odos-tc.demoriva.com/home?search=')
         
 
         //cy.contains('login').should('exist')
         
-        cy.get('[data-testid=textInput]').should('exist')
+        //cy.get('[data-testid=textInput]').should('exist')
         //cy.contains('developers and QA engineers').click()
 
-        cy.get('[data-testid=textInput]').type('Nick')
+        //cy.get('[data-testid=textInput]').type('Nick')
 
-        cy.get('[type="submit"]').click()
+        //cy.get('[type="submit"]').click()
 
         //cy.pause
 
         cy.get('[data-testid=textInput]').should('exist')
 
-        cy.get('[name=search]').type('Orlando')
+        cy.get('[name=search]').type('Dulles')
 
         cy.get('[class=usa-button]').click()
 
-        cy.get(':nth-child(1) > .usa-card__container > [data-testid="CardHeader"] > .usa-card__heading').click()
+        cy.get('[data-testid="CardBody"]').click()
+
+        cy.get('[data-testid="CardHeader"] > div > button > .usa-icon').click()
+
+        cy.get('[data-testid="CardBody"] > :nth-child(1) > div > button > .usa-icon').click()
+
+        cy.get('.usa-card__heading').click()
+
+        //cy.log('wait time is 20 mins')
 
         //cy.contains('O').click()
 
@@ -44,6 +52,7 @@ describe('Empty TestSearch Test', () => {
             //cy.log('The current real URL is: ', value)
         })
         //cy.go('back')
+    
 
     
     })
