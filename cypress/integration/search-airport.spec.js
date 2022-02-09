@@ -32,15 +32,19 @@ describe('Empty TestSearch Test', () => {
 
         cy.get('[data-testid=textInput]').should('exist')
 
-        cy.get('[name=search]').type('Orlando')
+        cy.get('[name=search]').type('Dulles')
 
         cy.get('[class=usa-button]').click()
 
-        cy.get(':nth-child(1) > .usa-card__container > [data-testid="CardHeader"] > .usa-card__heading').click()
+        cy.get('[data-testid="CardBody"]').click()
+
+        cy.get('[data-testid="CardHeader"] > div > button > .usa-icon').click()
+
+        cy.get('[data-testid="CardBody"] > :nth-child(1) > div > button > .usa-icon').click()
+
+        cy.get('.usa-card__heading').click()
 
         //cy.log('wait time is 20 mins')
-
-        cy.get('[name="favorite"]').click()
 
         //cy.contains('O').click()
 
